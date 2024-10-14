@@ -171,6 +171,36 @@ console.log(PrixPhotocopie(Nphotocopies));
 
 //console.log(prix);
 
+//----------------------------------------------------------------------//
+
+
+//Exercise 3:
+
+/* problem to solve :
+
+-Know if a user must pay taxes based on :
+
+*Sex:
+    *Male
+    *Female :
+        *Age >18 pay taxes
+        *Age < 35 pay taxes
+
+
+*/
+
+//init variables
+
+let sex = false;
+let age;
+let taxes ="";
+
+if (sex === false){
+    taxes ="Vous etes taxable"
+} else if (sex===true){
+    
+}
+
 
 
 
