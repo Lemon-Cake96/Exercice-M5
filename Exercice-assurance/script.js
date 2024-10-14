@@ -19,9 +19,13 @@
 
 */
 
+//init form values
+
+
+
 //init neccesary variales
 
-let AgeBelow25 = true;
+let AgeBelow25 = false;
 let AgeLicenseAbove2 = false;
 let NumberOfAccidents = 0;
 let isOldMember = false;  //Has the client been assured for over a year
@@ -33,7 +37,7 @@ console.log(AgeBelow25);
 console.log(AgeLicenseAbove2);
 console.log(NumberOfAccidents);
 
-// test 1 :
+// test 1 : works
 
 if ( AgeBelow25 === true && AgeLicenseAbove2 === false ){
     switch (NumberOfAccidents){
@@ -53,7 +57,7 @@ if ( AgeBelow25 === true && AgeLicenseAbove2 === false ){
         default:
             TarifClient = "refuse"
     }
-} else if (AgeBelow25 === true && AgeLicenseAbove2 === false){
+} else if (AgeBelow25 === false && AgeLicenseAbove2 === false){
     switch (NumberOfAccidents){
         case 0:
             TarifClient = "C";
@@ -64,7 +68,7 @@ if ( AgeBelow25 === true && AgeLicenseAbove2 === false ){
         default:
             TarifClient = "refuse";
     }
-} else if (AgeBelow25 === true && AgeLicenseAbove2 === true){
+} else if (AgeBelow25 === false && AgeLicenseAbove2 === true){
     switch (NumberOfAccidents){
         case 0:
             TarifClient = "B";
@@ -80,6 +84,22 @@ if ( AgeBelow25 === true && AgeLicenseAbove2 === false ){
     }
 }
 
+//Bonus price range based on membership age
+
+if (isOldMember === true){
+    switch (TarifClient){
+        case "D":
+            TarifClient = "C";
+            break;
+        case "C":
+            TarifClient = "B";
+            break;
+        case "B":
+            TarifClient = "A";
+        default:
+            TarifClient = "refuse";   
+    }
+}
 
 console.log(TarifClient);
 
