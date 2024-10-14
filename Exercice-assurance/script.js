@@ -20,7 +20,8 @@
 */
 
 //init form values
-
+let Age ="";
+let AgeLicense ="";
 
 
 //init neccesary variales
