@@ -316,10 +316,57 @@ array and every time compares both elements and keeps the bigger one.
 *way to swap two elements
 */
 
+console.log("Exo 7");
+
 //test:
 
 let Liste_ordone = [4,8,6,10,12,1,3];
 
 let elementArriere;
 let elementDevant;
+let memoire;
 
+elementArriere = Liste_ordone[1];
+elementDevant = Liste_ordone[3];
+
+console.log(elementArriere);
+console.log(elementDevant);
+
+// test swap
+console.log("swap");
+
+memoire = elementArriere;
+//console.log(memoire);
+elementArriere = elementDevant;
+elementDevant = memoire;
+
+console.log(elementArriere);
+console.log(elementDevant);
+
+console.log("swap works");
+
+//creation de la boucle
+
+function Trieur(array){
+    for (i=0; i< array.length;i++ ){
+        //console.log(i);
+        // elementArriere = array[i];
+        // elementDevant = array[i+1]; //no need
+        if (array[i] > array[i+1]){
+            memoire = array[i];
+            array[i] = array[i + 1];
+            array[i + 1] = memoire;
+            
+        }
+    }
+    return array
+}
+
+console.log(Liste_ordone);
+console.log(Trieur(Liste_ordone));
+//Marche pas to test tmr
+
+
+//-----------------------------------------------------------------------------------//
+
+//Exo 7
