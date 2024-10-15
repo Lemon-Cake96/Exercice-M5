@@ -265,18 +265,37 @@ the indexes of something we searched on the first one.
 
 *way to search or match within an array
     *array.fin()
+    *array.forEach()
 
 */
+
+console.log("Exo 6")
 
 //init variables
 const letters = ["a","b","b","c","d","b","a","c","b"];
 
-let searching =;
+let searching ="b";
 
 // array to store what we find
 let liste = [];
 
-letters.find()
+// console.log(searching)
 
 
+// function searcher (item){
+//     item === searching;
+//     console.log(item)
+// }
+
+//item -> name variable for each value of elements within the array letters
+letters.forEach((item) => {
+    //console.log(item);
+    //console.log(searching);
+    // if(item === searching){
+    //     liste.push(item);
+    //     liste.push(letters.indexOf(item));
+    // }
+});
+
+console.log(liste);
 
