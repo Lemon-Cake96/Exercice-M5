@@ -33,10 +33,10 @@ let isOldMember = false;  //Has the client been assured for over a year
 // const Tarif = ["a","b","c","d","refuse"]; //test for later
 let TarifClient = "";
 
-console.log(TarifClient);
-console.log(AgeBelow25);
-console.log(AgeLicenseAbove2);
-console.log(NumberOfAccidents);
+//console.log(TarifClient);
+//console.log(AgeBelow25);
+//console.log(AgeLicenseAbove2);
+//console.log(NumberOfAccidents);
 
 // test 1 : works
 
@@ -191,18 +191,59 @@ console.log(PrixPhotocopie(Nphotocopies));
 
 //init variables
 
-let sex = false;
-let age;
+let sex = true;
+let age = 45;
 let taxes ="";
 
-if (sex === false){
-    taxes ="Vous etes taxable"
+if (sex === false && age > 18){
+    taxes ="Vous etes taxable";
 } else if (sex===true){
-    
+    if ( age > 18){
+        taxes = "Vous etes taxable";
+    } else {
+        taxes = "Vous n'etes pas taxable"
+    }
+
+    if (age < 35){
+        taxes = "Vous etes taxable";
+    } else {
+        taxes = "Vous n'etes pas taxable"
+    }
+
 }
 
+console.log(taxes);
 
 
 
+// ----------------------------------------------------------------------//
 
+//exo 4 
+
+//Make a star "*" pyramid
+
+let PyramidFloors = 10;
+
+for (let i = PyramidFloors; i > 0 ; i--){
+    //console.log(i);
+    let star = "*";
+    star += star.repeat(i-1);
+    console.log(star);
+}
+
+//console.log(star);
+
+//---------------------------------------------------------------------------//
+
+// exo 5
+
+console.log("Exo 5");
+
+for (let i = 0; i < PyramidFloors ; i++){
+    //console.log(i);
+    let star = "*";
+    star += star.repeat(i);
+    console.log(star);
+
+}
 
