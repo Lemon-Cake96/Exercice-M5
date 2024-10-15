@@ -247,3 +247,36 @@ for (let i = 0; i < PyramidFloors ; i++){
 
 }
 
+
+//------------------------------------------------------------------------//
+
+//Exo 6
+
+/* Problem to solve :
+
+-we have an array with elements on it, and we want to push to an different array
+the indexes of something we searched on the first one.
+
+*2 Arrays
+    *one with elements
+    *empty
+
+*variable to store what we search
+
+*way to search or match within an array
+    *array.fin()
+
+*/
+
+//init variables
+const letters = ["a","b","b","c","d","b","a","c","b"];
+
+let searching =;
+
+// array to store what we find
+let liste = [];
+
+letters.find()
+
+
+
