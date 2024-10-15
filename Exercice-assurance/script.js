@@ -108,6 +108,7 @@ console.log(TarifClient);
 //-------------------------------------------------------------//
 
 // exo Photocopie -----
+console.log("Exo photocopies");
 
 /*problem to solve :
 
@@ -175,6 +176,7 @@ console.log(PrixPhotocopie(Nphotocopies));
 
 
 //Exercise 3:
+console.log("Exo TAXES")
 
 /* problem to solve :
 
@@ -219,6 +221,7 @@ console.log(taxes);
 // ----------------------------------------------------------------------//
 
 //exo 4 
+console.log("Exo 4");
 
 //Make a star "*" pyramid
 
@@ -320,14 +323,14 @@ console.log("Exo 7");
 
 //test:
 
-let Liste_ordone = [4,8,6,10,12,1,3];
+let Liste_ordone = [4,8,6,7,10,12,1,3];
 
 let elementArriere;
 let elementDevant;
 let memoire;
 
 elementArriere = Liste_ordone[1];
-elementDevant = Liste_ordone[3];
+elementDevant = Liste_ordone[2];
 
 console.log(elementArriere);
 console.log(elementDevant);
@@ -348,8 +351,12 @@ console.log("swap works");
 //creation de la boucle
 
 function Trieur(array){
+    //elementArriere = undefined;
+    //elementDevant = undefined;
+    memoire = undefined;
     for (i=0; i< array.length;i++ ){
         //console.log(i);
+        //console.log(i+1);
         // elementArriere = array[i];
         // elementDevant = array[i+1]; //no need
         if (array[i] > array[i+1]){
@@ -364,9 +371,54 @@ function Trieur(array){
 
 console.log(Liste_ordone);
 console.log(Trieur(Liste_ordone));
-//Marche pas to test tmr
+//Marche pas, to test tmr
 
 
 //-----------------------------------------------------------------------------------//
 
 //Exo 7
+
+/* Problem to solve:
+
+-We want to check if a given word is a "Palindrome", it reads the same from both ways.
+
+*2 variables:
+    *main word
+    *main word reversed (find a way to reverse the word)
+
+compare both words if they are the same then they are palindrome or not.
+
+test 1:
+string.split(): turns into array of letters
+array.reverse(): sorts indexes from last to first
+array.join(): joins the elements into single string
+
+test 2:
+
+
+
+*/
+
+console.log("Exo 7");
+
+let MainWord = "anna";
+
+function isPalindrome(MainWord){
+    let reverseWord;
+    
+    reverseWord = MainWord.split("");
+    //console.log(reverseWord);
+    reverseWord = reverseWord.reverse();
+    //console.log(reverseWord);
+    reverseWord = reverseWord.join(""); //if left empty it adds a ","
+    //console.log(reverseWord);
+    if (MainWord === reverseWord){
+        console.log("Your word is a palindrome.");
+        return true;
+        
+    }
+    console.log("Your word is not a palindrome.")
+    return false;
+}
+
+console.log(isPalindrome(MainWord));
