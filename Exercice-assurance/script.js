@@ -291,11 +291,35 @@ let liste = [];
 letters.forEach((item) => {
     //console.log(item);
     //console.log(searching);
-    // if(item === searching){
-    //     liste.push(item);
-    //     liste.push(letters.indexOf(item));
-    // }
+    //console.log(letters.indexOf(item));
+    //console.log(letters.findIndex(item));
+
+    if(item === searching){
+        liste.push(item);
+
+    }
 });
 
 console.log(liste);
+
+//-----------------------------------------------------------------------------------//
+
+//Exo 7
+
+/* Problem to solve :
+
+-We want to order an array through iteration, each loop the programs scans through the
+array and every time compares both elements and keeps the bigger one.
+
+*array with numbers to sort
+
+*way to swap two elements
+*/
+
+//test:
+
+let Liste_ordone = [4,8,6,10,12,1,3];
+
+let elementArriere;
+let elementDevant;
 
