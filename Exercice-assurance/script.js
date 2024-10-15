@@ -401,7 +401,7 @@ test 2:
 
 console.log("Exo 7");
 
-let MainWord = "anna";
+let MainWord = "anna"; //prompt if needed
 
 function isPalindrome(MainWord){
     let reverseWord;
@@ -422,3 +422,7 @@ function isPalindrome(MainWord){
 }
 
 console.log(isPalindrome(MainWord));
+
+//----------------------------------------------------------------------------//
+
+//exo Tour 
