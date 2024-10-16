@@ -454,5 +454,39 @@ console.log("Exercice Tours de Hanoi");
     -can only move one ring at the time
     -the order of size must be preserved at all times
 
-*
+*Algorithme:
+algo dans wikiapedia
+
 */ 
+
+//init variables
+
+//test
+let NombreEtages = 3; //window.prompt("Nombre d'etages de votre tour");
+
+let piliers = ["A","B","C"];
+
+function ResoHanoi (etages,pilier1,pilier2,pilier3){ //mouvement debut ABC
+    if (etages > 0){
+        ResoHanoi(etages -1,pilier1,pilier3,pilier2);//mouvement 2eme appel ACB
+        console.log(`${pilier1} vers ${pilier3}`);
+        ResoHanoi(etages - 1,pilier2,pilier1,pilier3);//mouvement 3eme appel BAC
+    }
+}
+
+
+
+ResoHanoi(NombreEtages,piliers[0],piliers[1],piliers[2]);
+
+//-----------------------------------------------------------------------//
+
+//Exo 9
+
+console.log("Exercice 9");
+
+/* problem to solve:
+
+-We want to create a string of chars that change every second line
+
+*/
+
