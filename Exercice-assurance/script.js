@@ -290,20 +290,36 @@ let liste = [];
 //     console.log(item)
 // }
 
+//test 1:
+
 //item -> name variable for each value of elements within the array letters
-letters.forEach((item) => {
-    //console.log(item);
-    //console.log(searching);
-    //console.log(letters.indexOf(item));
-    //console.log(letters.findIndex(item));
+// letters.forEach((item) => {
+//     //console.log(item);
+//     //console.log(searching);
+//     //console.log(letters.indexOf(item));
+//     //console.log(letters.findIndex(item));
+//     let indexitem = letters.indexOf(item);
+//     if(item === searching){
+//         liste.push(item);
 
-    if(item === searching){
-        liste.push(item);
+//     }
+// });
 
+// test 2:
+
+function arraySeacher(item,array){
+    let indexitem = array.indexOf(item);
+    console.log(indexitem)
+
+    while(indexitem != -1){
+        liste.push(`${item} est trouve au rang ` + indexitem);
+        indexitem = array.indexOf(item, indexitem + 1);
     }
-});
+    return liste;
+}
 
-console.log(liste);
+
+console.log(arraySeacher(searching,letters));
 
 //-----------------------------------------------------------------------------------//
 
@@ -413,11 +429,11 @@ function isPalindrome(MainWord){
     reverseWord = reverseWord.join(""); //if left empty it adds a ","
     //console.log(reverseWord);
     if (MainWord === reverseWord){
-        console.log("Your word is a palindrome.");
+        console.log("Votre mot est un palindrome.");
         return true;
         
     }
-    console.log("Your word is not a palindrome.")
+    console.log("Votre mot n'est pas un palindrome.")
     return false;
 }
 
@@ -426,3 +442,17 @@ console.log(isPalindrome(MainWord));
 //----------------------------------------------------------------------------//
 
 //exo Tour 
+
+console.log("Exercice Tours de Hanoi");
+
+/* Problem to solve :
+
+-we must create a function that solves the game, the rules of the game:
+    -3 pilars (Astart,Bmemory,Cfinish)
+    -a n amount of rings ordered from biggest to smallest
+    -goal of the game to move all the rings from Astart to Cfinish
+    -can only move one ring at the time
+    -the order of size must be preserved at all times
+
+*
+*/ 
