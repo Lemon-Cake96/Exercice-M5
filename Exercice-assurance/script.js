@@ -339,7 +339,7 @@ console.log("Exo 7");
 
 //test:
 
-let Liste_ordone = [4,8,6,7,10,12,1,3];
+let Liste_ordone = [10,8,6,7,9,12,1,3];
 
 let elementArriere;
 let elementDevant;
@@ -370,7 +370,7 @@ function Trieur(array){
     //elementArriere = undefined;
     //elementDevant = undefined;
     memoire = undefined;
-    for (i=0; i< array.length;i++ ){
+    for (i=0; i< 11;i++ ){
         //console.log(i);
         //console.log(i+1);
         // elementArriere = array[i];
@@ -574,3 +574,14 @@ console.log("Exercice 11");
 
 */
 
+//PyramidFloors already defined
+
+function PyramidMaker(){
+    let star = "*";
+    //console.log(star);
+    for (let i=0; i < PyramidFloors; i++){
+        console.log(star);
+    }
+}
+
+PyramidMaker();
