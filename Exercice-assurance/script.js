@@ -490,3 +490,74 @@ console.log("Exercice 9");
 
 */
 
+//init 
+
+let LinesAmount = 6; //window.prompt("How many lines ?")
+
+function LineMaker(LinesAmount){
+    for (let i = 0 ; i < LinesAmount; i++ ){
+        //console.log(i);
+        if (i%2 === 0){
+            console.log("#*#*#*#*#*");
+        }else{
+            console.log("*#*#*#*#*#");
+        }
+    }
+    return console.log(`Vous vouliez ${LinesAmount} ligne/s.`)
+}
+
+LineMaker(LinesAmount);
+
+//----------------------------------------------------------------------------------//
+
+//exo 10
+
+console.log("Exercice ecriture mots");
+
+/* Problem to solve:
+
+-We want to rewrite a given word by moving the index of letters by an "n" amount.
+
+*array of alphabet
+*given word
+
+*push word letters into differet array, array.push()
+*convert the array into string, array.join()
+
+*/
+
+//init
+
+const Alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m",
+"n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+let Word = "banane"; //prompt if needed
+let motdecaleNumber = 3; //prompt if needed
+
+function CreateurDeMotDecale(Word,Number){
+    //console.log(Alphabet);
+    //console.log(Number);
+    let finalwordarray = [];
+    let NewWordArray = Word.split(""); //if left empty it splits word per word
+    //console.log(NewWordArray);
+    NewWordArray.forEach(element => { 
+        //console.log(element);
+        for (let i = 0; i < Alphabet.length; i++){
+            //console.log(i)
+            if (element === Alphabet[i]){
+                console.log(`letter ${element} is number ${i} of alphabet`);
+                finalwordarray.push(Alphabet[i+Number]);
+
+            }
+
+        }
+    });
+    //console.log(finalwordarray);
+    finalword = finalwordarray.join("");
+    return finalword;
+
+}
+
+console.log(CreateurDeMotDecale(Word,motdecaleNumber));
+
+//------------------------------------------------------------------------------//
