@@ -561,3 +561,16 @@ function CreateurDeMotDecale(Word,Number){
 console.log(CreateurDeMotDecale(Word,motdecaleNumber));
 
 //------------------------------------------------------------------------------//
+
+//Exo 11
+
+console.log("Exercice 11");
+
+/* problem to solve:
+
+-Look exercices 4 and 5.
+
+*Must not use the string.repeat() method
+
+*/
+
