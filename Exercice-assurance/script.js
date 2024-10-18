@@ -654,7 +654,7 @@ let etudiants = [
 
 let GoodEtudiants =[]; //new array
 
-for(i = 0; i< etudiants.length;i++){//iterates however many students there are
+for(let i = 0; i< etudiants.length;i++){//iterates however many students there are
     //console.log(i);
     if (etudiants[i].note > 15){//i is variable, therefore it be used to track what index are we on
         GoodEtudiants.push(etudiants[i]);
@@ -665,13 +665,13 @@ console.log(GoodEtudiants);
 
 //sort them by Name
 
-//step 1: convert everything to upper case, cant use method.
+//step 1: convert everything to lower case, cant use method.
 
 let Alpha = "abcdefghijklmnopqrstuvwxyz";
 let UAlpha ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function LetterConvMiniscule(letter){
-    for (i=0; i < UAlpha.length; i++){
+    for (let i=0; i < UAlpha.length; i++){
         //console.log(i);
         if(UAlpha[i]=== letter){
             //console.log(Alpha[i]);
@@ -680,19 +680,30 @@ function LetterConvMiniscule(letter){
             return Alpha[i];
         }
     }
+    return letter;
 }
 
 
 
-console.log(LetterConvMiniscule("H"));//"H" returns "h" and "h" returns "h" Works.
+// console.log(LetterConvMiniscule("H"));//"H" returns "h" and "h" returns "h" Works.
+
+// Now we convert whole string 
 
 function WordConvMinscule(word){
-    for (i=0; i < word.length;i++){
-        console.log(i);
+    let convertedword ="";
+    for (let i=0; i < word.length;i++){
+        //console.log(i);
+        //console.log(word[i]);
+        //console.log(LetterConvMiniscule(word[i]));
+        convertedword += LetterConvMiniscule(word[i]);
     }
+    return convertedword;
 }
 
-WordConvMinscule("hi");
+
+console.log(WordConvMinscule("KAIQUE"));//works
+
+
 
 
 //calculate average
@@ -708,7 +719,7 @@ WordConvMinscule("hi");
 let moyenne = Number;
 let sommeNotes = 0;
 
-for (i=0;i<GoodEtudiants.length;i++){
+for (let i=0;i<GoodEtudiants.length;i++){
     //console.log(i);
     sommeNotes += GoodEtudiants[i].note;
     //console.log(sommeNotes);
