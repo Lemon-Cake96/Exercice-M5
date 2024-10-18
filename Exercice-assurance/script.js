@@ -370,7 +370,7 @@ function Trieur(array){
     //elementArriere = undefined;
     //elementDevant = undefined;
     memoire = undefined;
-    for (i=0; i< 11;i++ ){
+    for (let i=0; i< liste.length;i++ ){ // it might not fully loop thro the whole array after a swap ?
         //console.log(i);
         //console.log(i+1);
         // elementArriere = array[i];
@@ -469,7 +469,7 @@ let piliers = ["A","B","C"];
 function ResoHanoi (etages,pilier1,pilier2,pilier3){ //mouvement debut ABC
     if (etages > 0){
         ResoHanoi(etages -1,pilier1,pilier3,pilier2);//mouvement 2eme appel ACB
-        console.log(`${pilier1} vers ${pilier3}`);
+        console.log(`disque de taille ${etages}, ${pilier1} vers ${pilier3}`);
         ResoHanoi(etages - 1,pilier2,pilier1,pilier3);//mouvement 3eme appel BAC
     }
 }
@@ -574,14 +574,117 @@ console.log("Exercice 11");
 
 */
 
-//PyramidFloors already defined
+//PyramidFloors already defined by the previous exercice
 
 function PyramidMaker(){
     let star = "*";
+    console.log(star);
     //console.log(star);
-    for (let i=0; i < PyramidFloors; i++){
+    for (let i=0; i < PyramidFloors-1; i++){
+        star += "*";
         console.log(star);
     }
 }
 
 PyramidMaker();
+
+//----------------------------------------------------------------------------//
+
+//Exo 12
+
+console.log("Exercice 12");
+
+function RevPyramidMaker(PyramidFloors){
+    let star ="*";
+    for (let i = PyramidFloors; i > 0; i--){
+        let j = i;
+        while(j>0){
+            let sentence ="";
+            sentence += star;
+            j--
+        }
+
+    }
+
+
+}
+
+RevPyramidMaker(PyramidFloors);
+
+//-----------------------------------------------------------------------------------//
+
+//Exercice 13
+
+console.log("Exercice 13");
+
+
+
+//----------------------------------------------------------------------------------//
+
+//Exo Etudiants
+
+console.log("Exo Etudiants");
+
+/* Problem to solve:
+
+-We have an array of objects, each with 2 properties, name and note.
+-we want to keep ones with note above 15
+-from the ones kept we want to sort them by name
+-lastly calculate their average
+*/
+
+let etudiants = [
+    { nom:"Agathe", note: 15},
+    { nom:"Wlad", note: 16},
+    { nom:"Kaique", note:17},
+    { nom:"emmanuel", note:18},
+    { nom:"Sylvain", note:19},
+    { nom:"Yann", note:15},
+    { nom:"yannick", note:16},
+    { nom:"Jeremy", note:17},
+    { nom:"Angelique", note:18},
+    { nom:"Laureline", note:19},
+    { nom:"Dorian", note:15},
+    { nom:"Chris", note:16},
+    { nom:"Amin", note:17},
+    { nom:"Yohan", note:18},
+];
+
+//Keep ones with note > 15 
+
+let GoodEtudiants =[]; //new array
+
+for(i = 0; i< etudiants.length;i++){//iterates however many students there are
+    //console.log(i);
+    if (etudiants[i].note > 15){//i is variable, therefore it be used to track what index are we on
+        GoodEtudiants.push(etudiants[i]);
+    }
+}
+
+console.log(GoodEtudiants); 
+
+//sort them by Name
+
+
+
+//calculate average
+
+//tests
+
+// let keke = Boolean;
+// console.log(keke);
+// keke = 10; //returns 10, no errors
+// console.log(keke);
+
+
+let moyenne = Number;
+let sommeNotes = 0;
+
+for (i=0;i<GoodEtudiants.length;i++){
+    //console.log(i);
+    sommeNotes += GoodEtudiants[i].note;
+    //console.log(sommeNotes);
+}
+moyenne = sommeNotes/GoodEtudiants.length;
+
+console.log(moyenne);
