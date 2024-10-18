@@ -665,6 +665,34 @@ console.log(GoodEtudiants);
 
 //sort them by Name
 
+//step 1: convert everything to upper case, cant use method.
+
+let Alpha = "abcdefghijklmnopqrstuvwxyz";
+let UAlpha ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+function LetterConvMiniscule(letter){
+    for (i=0; i < UAlpha.length; i++){
+        //console.log(i);
+        if(UAlpha[i]=== letter){
+            //console.log(Alpha[i]);
+            return Alpha[i];
+        } else if (Alpha[i]===letter){
+            return Alpha[i];
+        }
+    }
+}
+
+
+
+console.log(LetterConvMiniscule("H"));//"H" returns "h" and "h" returns "h" Works.
+
+function WordConvMinscule(word){
+    for (i=0; i < word.length;i++){
+        console.log(i);
+    }
+}
+
+WordConvMinscule("hi");
 
 
 //calculate average
