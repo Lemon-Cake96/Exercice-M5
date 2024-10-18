@@ -665,7 +665,7 @@ console.log(GoodEtudiants);
 
 //sort them by Name
 
-//step 1: convert everything to lower case, cant use method.
+//step 1: convert everything to lower case, cant use methods.
 
 let Alpha = "abcdefghijklmnopqrstuvwxyz";
 let UAlpha ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
