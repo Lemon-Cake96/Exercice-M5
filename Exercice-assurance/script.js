@@ -341,45 +341,25 @@ console.log("Exo 7");
 
 let Liste_ordone = [10,8,6,7,9,12,1,3];
 
-let elementArriere;
-let elementDevant;
 let memoire;
-
-elementArriere = Liste_ordone[1];
-elementDevant = Liste_ordone[2];
-
-console.log(elementArriere);
-console.log(elementDevant);
-
-// test swap
-console.log("swap");
-
-memoire = elementArriere;
-//console.log(memoire);
-elementArriere = elementDevant;
-elementDevant = memoire;
-
-console.log(elementArriere);
-console.log(elementDevant);
-
-console.log("swap works");
 
 //creation de la boucle
 
 function Trieur(array){
     //elementArriere = undefined;
     //elementDevant = undefined;
-    memoire = undefined;
-    for (let i=0; i< liste.length;i++ ){ // it might not fully loop thro the whole array after a swap ?
+    let memoire;
+    for (let i=0; i< array.length;i++ ){ // it might not fully loop thro the whole array after a swap ?
         //console.log(i);
         //console.log(i+1);
         // elementArriere = array[i];
         // elementDevant = array[i+1]; //no need
-        if (array[i] > array[i+1]){
-            memoire = array[i];
-            array[i] = array[i + 1];
-            array[i + 1] = memoire;
-            
+        for (let k = 0; k < array.length; k++){ //new loop
+            if (array[k] > array[k+1]){
+                memoire = array[k];
+                array[k] = array[k + 1];
+                array[k + 1] = memoire;    
+            }
         }
     }
     return array
@@ -387,7 +367,7 @@ function Trieur(array){
 
 console.log(Liste_ordone);
 console.log(Trieur(Liste_ordone));
-//Marche pas, to test tmr
+//works fixed
 
 
 //-----------------------------------------------------------------------------------//
@@ -687,7 +667,7 @@ function LetterConvMiniscule(letter){
 
 // console.log(LetterConvMiniscule("H"));//"H" returns "h" and "h" returns "h" Works.
 
-// Now we convert whole string 
+// step 2 Now we convert whole string 
 
 function WordConvMinscule(word){
     let convertedword ="";
@@ -701,8 +681,37 @@ function WordConvMinscule(word){
 }
 
 
-console.log(WordConvMinscule("KAIQUE"));//works
+//console.log(WordConvMinscule("KAIQUE"));//works
 
+//step 3 now that we can convert every name to lower case we can compare them
+
+function TrieurEtudiants(GoodEtudiants) {
+    //let name1;
+    //let name2;
+    let memo;
+    for (let i = 0; i < GoodEtudiants.length; i++){
+        console.log(i);
+        //console.log(WordConvMinscule(GoodEtudiants[i].nom)); // works
+        for (let j = 0; j < GoodEtudiants.length - 1; j++){
+            // name1 = WordConvMinscule(GoodEtudiants[j].nom);
+            // name2 = WordConvMinscule(GoodEtudiants[j + 1].nom);
+            // console.log(name1);
+            // console.log(name2);
+            if (name1 > name2){
+                memo = name1;
+                name1 = name2;
+                name2 = memo;
+                //
+                
+
+            }
+
+        }
+    }
+    return GoodEtudiants;
+}
+
+console.log(TrieurEtudiants(GoodEtudiants));
 
 
 
