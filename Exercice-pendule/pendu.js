@@ -32,15 +32,18 @@ function Pendule(){
     let mot_a_trouver = "kaique" //WordChooser(words);
     //console.log(mot_a_trouver);
     let mot_trouve = HiddenWordMaker(mot_a_trouver);
-    console.log(mot_trouve);
+    //console.log(mot_trouve);
     let test = mot_a_trouver.length;
 
 
     while ((mot_trouve !== mot_a_trouver) && (erreurs_comises !== erreurs_autorisees)){
-        let letter
-
-
-
+        let letter = prompt("Entrez une lettre");
+        if (letter > 1){
+            console.log("Plus d'une lettre rentré");
+            return;
+        }else {
+            lettres_places(mot_a_trouver,letter)
+        }
     }
 }
 
@@ -56,6 +59,7 @@ function HiddenWordMaker(word){
 //console.log(HiddenWordMaker("Hello"));// works
 
 function lettres_places(mot_complet,lettres_trouvees){
+    lettres_trouvees += lettres_trouvees;
     console.log(lettres_trouvees);
     let hiddenword = HiddenWordMaker(mot_complet);
     // lets try converting hidden word into an array
