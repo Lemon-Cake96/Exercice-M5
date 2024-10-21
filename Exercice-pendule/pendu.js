@@ -29,20 +29,17 @@ function WordChooser(Array){
 function Pendule(){
     erreurs_autorisees;
     let erreurs_comises = 0;
-    let mot_a_trouver = "kaique" //WordChooser(words);
+    let mot_a_trouver = "hello" //WordChooser(words);
     //console.log(mot_a_trouver);
     let mot_trouve = HiddenWordMaker(mot_a_trouver);
     //console.log(mot_trouve);
-    let test = mot_a_trouver.length;
-
 
     while ((mot_trouve !== mot_a_trouver) && (erreurs_comises !== erreurs_autorisees)){
         let letter = prompt("Entrez une lettre");
-        if (letter > 1){
+        if (letter.length > 1){
             console.log("Plus d'une lettre rentré");
-            return;
         }else {
-            lettres_places(mot_a_trouver,letter)
+            lettres_places(mot_a_trouver,letter);
         }
     }
 }
@@ -86,3 +83,5 @@ function lettres_places(mot_complet,lettres_trouvees){
 }
 
 //lettres_places("hello","");
+
+Pendule();
