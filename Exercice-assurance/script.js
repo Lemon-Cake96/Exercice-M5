@@ -747,10 +747,16 @@ console.log(GoodEtudiants);
 
 //step 1: convert everything to lower case, cant use methods.
 
-let Alpha = "abcdeéèfghijklmnopqrstuvwxyz";
-let UAlpha ="ABCDEÉÈFGHIJKLMNOPQRSTUVWXYZ";
+const Alpha = "abcdeéèfghijklmnopqrstuvwxyz";
+const UAlpha ="ABCDEÉÈFGHIJKLMNOPQRSTUVWXYZ";
+const SpeChar ="ÉÈÊËéèêë"
 
 function LetterConvMiniscule(letter){
+    for (let a =0; a < SpeChar.length; a++){
+        if (letter === SpeChar[a]){
+            letter = "e"
+        }
+    }
     for (let i=0; i < UAlpha.length; i++){
         //console.log(i);
         if(UAlpha[i]=== letter){
