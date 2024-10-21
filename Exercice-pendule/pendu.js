@@ -36,17 +36,17 @@ function Pendule(){
     let test = mot_a_trouver.length;
 
 
-    // while ((mot_trouve !== mot_a_trouver) && (erreurs_comises !== erreurs_autorisees)){
-    //     let letter; //prompt
+    while ((mot_trouve !== mot_a_trouver) && (erreurs_comises !== erreurs_autorisees)){
+        let letter
 
 
 
-    // }
+    }
 }
 
 function HiddenWordMaker(word){
     let hiddenword =""
-    for (i = 0; i < word.length; i++){
+    for (let i = 0; i < word.length; i++){
         //console.log(i);
         hiddenword += "-"
     }
@@ -56,5 +56,29 @@ function HiddenWordMaker(word){
 //console.log(HiddenWordMaker("Hello"));// works
 
 function lettres_places(mot_complet,lettres_trouvees){
+    console.log(lettres_trouvees);
+    let hiddenword = HiddenWordMaker(mot_complet);
+    // lets try converting hidden word into an array
+    let hiddenwordarray = [];
+    for ( a = 0; a < hiddenword.length; a++ ){
+        hiddenwordarray[a] = hiddenword[a];
+    }
+    console.log(hiddenwordarray); //works
+    //console.log(hiddenword); 
+    for ( let i = 0; i < mot_complet.length ; i++){
+        //console.log(i + " this is a i loop");
+        for (let j = 0; j < lettres_trouvees.length ;j++){
+            //console.log(j + " this is a j loop");
+            if (lettres_trouvees[j] === mot_complet[i]){
+                //console.log(lettres_trouvees[j]);
+                //console.log(mot_complet[i]);
+                hiddenwordarray[i] = lettres_trouvees[j]  //works
+                console.log(hiddenwordarray);
 
+            }
+        }  
+    }
+    return hiddenwordarray;
 }
+
+//lettres_places("hello","");
