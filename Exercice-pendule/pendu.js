@@ -20,7 +20,7 @@ function Pendule(){
     //test init
     new_mot = mot_tiret;
 
-    console.log(new_mot);
+    //console.log(new_mot); //works
 
     //test while loop
 
@@ -29,24 +29,23 @@ function Pendule(){
 
         console.log(new_mot);
 
-        let letter = "h" //window.prompt("Rentrez une lettre");//create conditions for prompt after
+        let letter = window.prompt("Rentrez une lettre");//create conditions for prompt after
 
         for ( let i = 0; i < choosedword.length; i++){
             //console.log(i); //test word : "hello" so 0-4 loops
             if (letter === choosedword[i]){
-                new_mot = LetterSwapper(new_mot,choosedword[i],letter);
-                //letterUsed += letter;
-            } else {
+                new_mot = LetterSwapper(new_mot,i,letter);
+            } else{
                 console.log("la lettre n'appartient pas au mot");
-
-                
             }
         }
+        letterUsed += letter;
+        console.log(letterUsed); 
         console.log("Vous avez essaye les lettres suivantes : " + letterUsed);
     }
     
     if (new_mot === choosedword){
-        console.log("Vous avez trouvé le mot" + choosedword);
+        console.log("Vous avez trouvé le mot " + choosedword);
     }
 }
 
@@ -84,4 +83,4 @@ function LetterSwapper(mot_tiret,IndexToSwap,letter){ //test
 
 //Game test
 
-//Pendule();
+Pendule();
