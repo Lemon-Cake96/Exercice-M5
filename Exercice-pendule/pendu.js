@@ -17,23 +17,34 @@ function Pendule(){
     }
     //console.log(mot_tiret) //works
 
+    //test init
+    new_mot = mot_tiret;
+
     //test while loop
 
     while (new_mot !== choosedword){//add losing condition later
-        
+        let letterUsed = "";
+
+        console.log(new_mot);
 
         let letter = window.prompt("Rentrez une lettre");//create conditions for prompt after
 
         for ( let i = 0; i < choosedword.length; i++){
             //console.log(i); //test word : "hello" so 0-4 loops
             if (letter === choosedword[i]){
-                LetterSwapper(mot_tiret,mot_tiret[i],letter);
+                new_mot = LetterSwapper(new_mot,new_mot[i],letter);
+                //letterUsed += letter;
             } else {
                 console.log("la lettre n'appartient pas au mot");
+
                 
             }
         }
-
+        console.log("Vous avez essaye les lettres suivantes : " + letterUsed);
+    }
+    
+    if (new_mot === choosedword){
+        console.log("Vous avez trouvé le mot" + choosedword);
     }
 }
 
@@ -43,6 +54,7 @@ function LetterSwapper(mot_tiret,tiret,letter){
     let new_mot = "";
 
     for ( let i = 0; i < mot_tiret.length; i++){
+        //console.log(i);
         //trouver le tiret  remplacer
         let underscore = mot_tiret[i];
 
@@ -59,3 +71,8 @@ function LetterSwapper(mot_tiret,tiret,letter){
 //test
 
 //console.log(LetterSwapper("hello","l","-")); // works
+//console.log(LetterSwapper(words,words[2],"-"));// works
+
+//Game test
+
+//Pendule();
