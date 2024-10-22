@@ -20,12 +20,14 @@ function Pendule(){
     //test init
     new_mot = mot_tiret;
 
+    let letterUsed = "";
+    let compter = 0;
+
     //console.log(new_mot); //works
 
     //test while loop
 
     while (new_mot !== choosedword){//add losing condition later
-        let letterUsed = "";
 
         console.log(new_mot);
 
@@ -35,13 +37,16 @@ function Pendule(){
             //console.log(i); //test word : "hello" so 0-4 loops
             if (letter === choosedword[i]){
                 new_mot = LetterSwapper(new_mot,i,letter);
-            } else{
-                console.log("la lettre n'appartient pas au mot");
+            } else if (i === choosedword.length){
+                console.log(`la lettre ${letter} n'appartient pas au mot`);
+                compter++
+
             }
         }
         letterUsed += letter;
-        console.log(letterUsed); 
+        //console.log(letterUsed); 
         console.log("Vous avez essaye les lettres suivantes : " + letterUsed);
+        console.log("Vous avez commis " + compter + " erreurs.");
     }
     
     if (new_mot === choosedword){
