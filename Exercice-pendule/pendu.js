@@ -7,8 +7,8 @@ const erreurs_autorisees = 10;
 function Pendule(){
     //first we pick a word to find
 
-    let WordNumber = Math.floor(Math.random() * words.length);
-    let choosedword = "hello" //words[WordNumber];
+    //let WordNumber = Math.floor(Math.random() * words.length);
+    let choosedword = "hello"; //words[WordNumber];
 
     //turn the choosedword into tiret
     let mot_tiret ="";
@@ -20,6 +20,8 @@ function Pendule(){
     //test init
     new_mot = mot_tiret;
 
+    console.log(new_mot);
+
     //test while loop
 
     while (new_mot !== choosedword){//add losing condition later
@@ -27,12 +29,12 @@ function Pendule(){
 
         console.log(new_mot);
 
-        let letter = window.prompt("Rentrez une lettre");//create conditions for prompt after
+        let letter = "h" //window.prompt("Rentrez une lettre");//create conditions for prompt after
 
         for ( let i = 0; i < choosedword.length; i++){
             //console.log(i); //test word : "hello" so 0-4 loops
             if (letter === choosedword[i]){
-                new_mot = LetterSwapper(new_mot,new_mot[i],letter);
+                new_mot = LetterSwapper(new_mot,choosedword[i],letter);
                 //letterUsed += letter;
             } else {
                 console.log("la lettre n'appartient pas au mot");
@@ -50,20 +52,19 @@ function Pendule(){
 
 //test function
 
-function LetterSwapper(mot_tiret,tiret,letter){
+function LetterSwapper(mot_tiret,IndexToSwap,letter){ //test 
     let new_mot = "";
 
-    for ( let i = 0; i < mot_tiret.length; i++){
-        //console.log(i);
-        //trouver le tiret  remplacer
-        let underscore = mot_tiret[i];
+    for ( let i = 0; i < mot_tiret.length; i++){ // avec test : pour boucle 0
+        
+        let iChar = mot_tiret[i]; 
 
-        //le checkeur de quel tiret, il prendra la valeur de la boucle du pendule
-        if (underscore === tiret){
-            new_mot += letter; //letter choosed from prompt
+        if (mot_tiret[i] === IndexToSwap){
+            new_mot += letter;
         } else {
-            new_mot += underscore; //keeps same underscores
+            new_mot += iChar;
         }
+
     }
     return new_mot
 }
@@ -72,6 +73,14 @@ function LetterSwapper(mot_tiret,tiret,letter){
 
 //console.log(LetterSwapper("hello","l","-")); // works
 //console.log(LetterSwapper(words,words[2],"-"));// works
+
+//problem : when the word is made out of the same single letter "-" it swaps the whole thing
+
+new_mot ="-----"
+letter ="h"
+choosedword ="hello"
+console.log(LetterSwapper(new_mot,0,letter));
+
 
 //Game test
 
