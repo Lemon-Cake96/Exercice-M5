@@ -59,7 +59,7 @@ function LetterSwapper(mot_tiret,IndexToSwap,letter){ //test
         
         let iChar = mot_tiret[i]; 
 
-        if (mot_tiret[i] === IndexToSwap){
+        if ( i === IndexToSwap){
             new_mot += letter;
         } else {
             new_mot += iChar;
@@ -76,10 +76,10 @@ function LetterSwapper(mot_tiret,IndexToSwap,letter){ //test
 
 //problem : when the word is made out of the same single letter "-" it swaps the whole thing
 
-new_mot ="-----"
-letter ="h"
-choosedword ="hello"
-console.log(LetterSwapper(new_mot,0,letter));
+// new_mot ="-----"
+// letter ="h"
+// choosedword ="hello"
+// console.log(LetterSwapper(new_mot,0,letter)); // works
 
 
 //Game test
