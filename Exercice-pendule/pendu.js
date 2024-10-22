@@ -37,7 +37,7 @@ function Pendule(){
             //console.log(i); //test word : "hello" so 0-4 loops
             if (letter === choosedword[i]){
                 new_mot = LetterSwapper(new_mot,i,letter);
-            } else if (console.log((console.log(i + "value of i") === console.log(choosedword.length + "value of .lenght")))){
+            } else if (i === choosedword.length - 1){ // fix : .lenght starts at 1 and loop at 0
                 console.log(`la lettre ${letter} n'appartient pas au mot`);
                 compter++
 
