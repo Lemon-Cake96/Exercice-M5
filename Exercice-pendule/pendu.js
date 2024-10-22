@@ -37,7 +37,7 @@ function Pendule(){
             //console.log(i); //test word : "hello" so 0-4 loops
             if (letter === choosedword[i]){
                 new_mot = LetterSwapper(new_mot,i,letter);
-            } else if (i === choosedword.length){
+            } else if (console.log((console.log(i + "value of i") === console.log(choosedword.length + "value of .lenght")))){
                 console.log(`la lettre ${letter} n'appartient pas au mot`);
                 compter++
 
@@ -51,12 +51,13 @@ function Pendule(){
     
     if (new_mot === choosedword){
         console.log("Vous avez trouvé le mot " + choosedword);
+        console.log(choosedword.length);
     }
 }
 
 //test function
 
-function LetterSwapper(mot_tiret,IndexToSwap,letter){ //test : currently works
+function LetterSwapper(mot_tiret,IndexToSwap,letter){ //tests : currently works
     let new_mot = "";
 
     for ( let i = 0; i < mot_tiret.length; i++){ // avec test : pour boucle 0
@@ -73,7 +74,7 @@ function LetterSwapper(mot_tiret,IndexToSwap,letter){ //test : currently works
     return new_mot
 }
 
-//test
+//tests :
 
 //console.log(LetterSwapper("hello","l","-")); // works
 //console.log(LetterSwapper(words,words[2],"-"));// works
@@ -86,6 +87,6 @@ function LetterSwapper(mot_tiret,IndexToSwap,letter){ //test : currently works
 // console.log(LetterSwapper(new_mot,0,letter)); // works
 
 
-//Game test
+//Game test :
 
 Pendule();
