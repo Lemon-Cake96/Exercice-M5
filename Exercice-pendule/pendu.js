@@ -56,7 +56,7 @@ function Pendule(){
 
 //test function
 
-function LetterSwapper(mot_tiret,IndexToSwap,letter){ //test 
+function LetterSwapper(mot_tiret,IndexToSwap,letter){ //test : currently works
     let new_mot = "";
 
     for ( let i = 0; i < mot_tiret.length; i++){ // avec test : pour boucle 0
