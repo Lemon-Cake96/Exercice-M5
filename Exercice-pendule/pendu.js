@@ -1,87 +1,61 @@
-//Exercice pendule
+// exercice pendule 
+
+const words = "hello"; //array of words
 
 const erreurs_autorisees = 10;
 
-const words = ["hello","world","friends","lads"];
+function Pendule(){
+    //first we pick a word to find
 
+    let WordNumber = Math.floor(Math.random() * words.length);
+    let choosedword = "hello" //words[WordNumber];
 
-//Choosing a word to find from a given array.
+    //turn the choosedword into tiret
+    let mot_tiret ="";
+    for (let t = 0; t < choosedword.length; t++){
+        mot_tiret += "-";
+    }
+    //console.log(mot_tiret) //works
 
-function WordChooser(Array){
-    let choosedword;
-    //picks a random number based on how many elements an array has
-    
-    let i = Math.floor(Math.random() * Array.length);
-    //console.log(i);
-    
-    //sets the number generated to an element index of the array
-    
-    choosedword = Array[i];
-    //console.log(choosedword);
-    return choosedword;
+    //test while loop
+
+    while (new_mot !== choosedword){//add losing condition later
+        
+
+        let letter = window.prompt("Rentrez une lettre");//create conditions for prompt after
+
+        for ( let i = 0; i < choosedword.length; i++){
+            //console.log(i); //test word : "hello" so 0-4 loops
+            if (letter === choosedword[i]){
+                LetterSwapper(mot_tiret,mot_tiret[i],letter);
+            } else {
+                console.log("la lettre n'appartient pas au mot");
+                
+            }
+        }
+
+    }
 }
 
-//console.log(WordChooser(words));
-//WordChooser(words); //works
+//test function
 
-//
+function LetterSwapper(mot_tiret,tiret,letter){
+    let new_mot = "";
 
-function Pendule(){
-    erreurs_autorisees;
-    let erreurs_comises = 0;
-    let mot_a_trouver = "hello" //WordChooser(words);
-    //console.log(mot_a_trouver);
-    let mot_trouve = HiddenWordMaker(mot_a_trouver);
-    //console.log(mot_trouve);
+    for ( let i = 0; i < mot_tiret.length; i++){
+        //trouver le tiret  remplacer
+        let underscore = mot_tiret[i];
 
-    while ((mot_trouve !== mot_a_trouver) && (erreurs_comises !== erreurs_autorisees)){
-        let letter = prompt("Entrez une lettre");
-        if (letter.length > 1){
-            console.log("Plus d'une lettre rentré");
-        }else {
-            lettres_places(mot_a_trouver,letter);
+        //le checkeur de quel tiret, il prendra la valeur de la boucle du pendule
+        if (underscore === tiret){
+            new_mot += letter; //letter choosed from prompt
+        } else {
+            new_mot += underscore; //keeps same underscores
         }
     }
+    return new_mot
 }
 
-function HiddenWordMaker(word){
-    let hiddenword =""
-    for (let i = 0; i < word.length; i++){
-        //console.log(i);
-        hiddenword += "-"
-    }
-    return hiddenword;
-}
+//test
 
-//console.log(HiddenWordMaker("Hello"));// works
-
-function lettres_places(mot_complet,lettres_trouvees){
-    lettres_trouvees += lettres_trouvees;
-    console.log(lettres_trouvees);
-    let hiddenword = HiddenWordMaker(mot_complet);
-    // lets try converting hidden word into an array
-    let hiddenwordarray = [];
-    for ( a = 0; a < hiddenword.length; a++ ){
-        hiddenwordarray[a] = hiddenword[a];
-    }
-    console.log(hiddenwordarray); //works
-    //console.log(hiddenword); 
-    for ( let i = 0; i < mot_complet.length ; i++){
-        //console.log(i + " this is a i loop");
-        for (let j = 0; j < lettres_trouvees.length ;j++){
-            //console.log(j + " this is a j loop");
-            if (lettres_trouvees[j] === mot_complet[i]){
-                //console.log(lettres_trouvees[j]);
-                //console.log(mot_complet[i]);
-                hiddenwordarray[i] = lettres_trouvees[j]  //works
-                console.log(hiddenwordarray);
-
-            }
-        }  
-    }
-    return hiddenwordarray;
-}
-
-//lettres_places("hello","");
-
-Pendule();
+//console.log(LetterSwapper("hello","l","-")); // works
