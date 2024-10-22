@@ -27,7 +27,7 @@ function Pendule(){
 
     //test while loop
 
-    while (new_mot !== choosedword){//add losing condition later
+    while (new_mot !== choosedword && compter < erreurs_autorisees){//add losing condition later
 
         console.log(new_mot);
 
@@ -41,6 +41,7 @@ function Pendule(){
                 new_mot = LetterSwapper(new_mot,i,letter);
                 swap = true;
             } else if (i === choosedword.length - 1 && swap === false ){ // fix : .lenght starts at 1 and loop at 0
+                //added bool check to make sure 1st condition hasnt been executed.
                 //else if (console.log(i + "value of i") === console.log(choosedword.length + "value of .lenght"))){
                 console.log(`la lettre ${letter} n'appartient pas au mot`);
                 compter++
@@ -50,13 +51,17 @@ function Pendule(){
         letterUsed += letter;
         //console.log(letterUsed); 
         console.log("Vous avez essaye les lettres suivantes : " + letterUsed);
-        console.log("Vous avez commis " + compter + " erreurs.");
+        console.log("Vous avez commis " + compter + " erreurs." + " il vous reste " +
+             (erreurs_autorisees - compter) + " essais");
     }
     
     if (new_mot === choosedword){
         console.log("Vous avez trouvé le mot " + choosedword);
         //console.log(choosedword.length);
+    } else {
+        console.log("Vous avez perdu, le mot etait : " + choosedword);
     }
+
 }
 
 //test function
