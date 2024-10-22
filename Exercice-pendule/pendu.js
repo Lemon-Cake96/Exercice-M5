@@ -31,13 +31,17 @@ function Pendule(){
 
         console.log(new_mot);
 
+        let swap = false;
+
         let letter = window.prompt("Rentrez une lettre");//create conditions for prompt after
 
         for ( let i = 0; i < choosedword.length; i++){
             //console.log(i); //test word : "hello" so 0-4 loops
             if (letter === choosedword[i]){
                 new_mot = LetterSwapper(new_mot,i,letter);
-            } else if (i === choosedword.length - 1){ // fix : .lenght starts at 1 and loop at 0
+                swap = true;
+            } else if (i === choosedword.length - 1 && swap === false ){ // fix : .lenght starts at 1 and loop at 0
+                //else if (console.log(i + "value of i") === console.log(choosedword.length + "value of .lenght"))){
                 console.log(`la lettre ${letter} n'appartient pas au mot`);
                 compter++
 
@@ -51,7 +55,7 @@ function Pendule(){
     
     if (new_mot === choosedword){
         console.log("Vous avez trouvé le mot " + choosedword);
-        console.log(choosedword.length);
+        //console.log(choosedword.length);
     }
 }
 
