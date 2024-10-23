@@ -102,6 +102,6 @@ function LetterSwapper(mot_tiret,IndexToSwap,letter){ //tests : currently works
 
 //Game test :
 
-Pendule();
+//Pendule();
 
 
